@@ -15,7 +15,8 @@ function App() {
       try {
         setIsTyping(true); 
 
-        const genAI = new GoogleGenerativeAI("AIzaSyCnlxZOdRYgjpXh9nUIFqfthg0qJUYMMQw"); 
+       // const genAI = new GoogleGenerativeAI("AIzaSyCnlxZOdRYgjpXh9nUIFqfthg0qJUYMMQw"); 
+        const genAI = new GoogleGenerativeAI("AIzaSyDKGnII10-okWGoc8Qytl6GISyXcVuTFfE"); 
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
         const result = await model.generateContent({ 
@@ -40,7 +41,7 @@ function App() {
   }, [chatHistory]);
 
   return (
-    <div className="flex flex-col h-screen bg-gray-900 text-white">
+    <div className="flex flex-col h-screen bg-gray-900 text-white py-10">
       
       <header className="p-4 text-center text-xl font-bold bg-gray-800">
         Mike__Talk__AI 🤖
