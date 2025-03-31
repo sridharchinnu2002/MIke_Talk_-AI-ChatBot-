@@ -15,7 +15,7 @@ function App() {
       try {
         setIsTyping(true); 
 
-        const genAI = new GoogleGenerativeAI("AIzaSyCnlxZOdRYgjpXh9nUIFqfthg0qJUYMMQw");  // Replace with your API key
+        const genAI = new GoogleGenerativeAI("AIzaSyCnlxZOdRYgjpXh9nUIFqfthg0qJUYMMQw"); 
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
         const result = await model.generateContent({ 
@@ -41,20 +41,20 @@ function App() {
 
   return (
     <div className="flex flex-col h-screen bg-gray-900 text-white">
-      {/* Header */}
+      
       <header className="p-4 text-center text-xl font-bold bg-gray-800">
         Mike__Talk__AI 🤖
       </header>
 
-      {/* Chat Box */}
+      
       <div className="flex-1 overflow-y-auto p-4 space-y-4 max-w-4xl mx-auto w-full">
         {chatHistory.map((val, i) => (
           <div key={i} className="flex flex-col">
-            {/* User Message */}
+          
             <div className="self-end bg-blue-600 text-white px-4 py-2 rounded-lg max-w-md md:max-w-lg lg:max-w-xl">
               <strong>You:</strong> {val.userText}
             </div>
-            {/* AI Response with Increased Width */}
+           
             <div className="self-start bg-gray-700 text-white px-4 py-2 rounded-lg max-w-md md:max-w-lg lg:max-w-2xl mt-2">
               {val.sticker} {val.aiText}
             </div>
@@ -63,12 +63,12 @@ function App() {
         <div ref={chatEndRef}></div>
       </div>
 
-      {/* Typing Animation */}
+    
       {isTyping && (
         <p className="text-center text-gray-400">Mike is typing<span>.</span><span>.</span><span>.</span></p>
       )}
 
-      {/* Input Field */}
+     
       <div className="flex items-center p-4 bg-gray-800 max-w-4xl mx-auto w-full">
         <input
           type="text"
@@ -76,7 +76,7 @@ function App() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
-              e.preventDefault(); // Prevents accidental form submission
+              e.preventDefault(); 
               handleSend();
             }
           }}
